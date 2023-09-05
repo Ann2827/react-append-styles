@@ -1,0 +1,39 @@
+{
+  "name": "react-append-styles",
+  "version": "1.0.0",
+  "description": "React append js styles to head",
+  "author": "Ann Bystrova <ann.bystrova96@mail.ru>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ann2827/react-append-styles.git"
+  },
+  "keywords": [
+    "react",
+    "css-in-js",
+    "append",
+    "styles"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ann2827/react-append-styles/issues"
+  },
+  "homepage": "https://github.com/Ann2827/react-append-styles#readme",
+  "type": "module",
+  "module": "dist/index.modern.js",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
