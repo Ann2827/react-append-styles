@@ -29,4 +29,17 @@ describe('makeClasses:', () => {
 
     unmount();
   });
+
+  test('3', () => {
+    const useClasses = makeClasses<'wrapper'>({ wrapper: { backgroundColor: 'red' } });
+    let doAppend = false;
+    const { unmount, rerender } = renderHook(() => useClasses(undefined, doAppend));
+    expect(document.styleSheets[0]?.cssRules[0].cssText).toBeUndefined();
+
+    doAppend = true;
+    rerender();
+    expect(document.styleSheets[0]?.cssRules[0].cssText).toContain('background-color: red');
+
+    unmount();
+  });
 });

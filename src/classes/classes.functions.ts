@@ -11,8 +11,6 @@ const defaultClasses = <C extends TClassesKeys>(style: TStyle<C>): TClasses<C> =
 
 const fakeUseTheme = <T = unknown>(listener: (state: {}) => T): T => listener({});
 
-const doAppend = true;
-
 // const useClasses = <T extends TTheme, C extends TClassesKeys, P extends TProps>(
 //   useTheme: ReturnType<typeof makeSubscribe<T>>,
 //   style: TStyleFn<C, P & { theme: T }>,
@@ -56,7 +54,7 @@ export const makeThemeClasses =
     style: TStyleFn<C, P & { theme: T }>,
     options?: Partial<TOptions>,
   ): TUseClasses<C, P> => {
-    return (props: P): TClasses<C> => {
+    return (props: P, doAppend = true): TClasses<C> => {
       const theme = useTheme<T>((state) => state);
       // TODO: проверить, что лишний раз не меняются стили
       const styleObj = Defer.useMemo<TStyle<C>>(
