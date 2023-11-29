@@ -50,7 +50,7 @@ const fakeUseTheme = <T = unknown>(listener: (state: {}) => T): T => listener({}
 
 export const makeThemeClasses =
   <T extends TTheme>(useTheme: ReturnType<typeof makeSubscribe<T>>) =>
-  <C extends TClassesKeys, P extends TProps = undefined>(
+  <C extends TClassesKeys, P extends TProps = null>(
     style: TStyleFn<C, P & { theme: T }>,
     options?: Partial<TOptions>,
   ): TUseClasses<C, P> => {

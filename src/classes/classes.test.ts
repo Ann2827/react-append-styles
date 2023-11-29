@@ -6,7 +6,7 @@ import makeClasses from './classes.functions';
 describe('makeClasses:', () => {
   test('1', () => {
     const useClasses = makeClasses<'wrapper'>({ wrapper: { backgroundColor: 'red' } });
-    const { result, unmount } = renderHook(() => useClasses());
+    const { result, unmount } = renderHook(() => useClasses(null));
     expect(Object.keys(result.current)).toContain('wrapper');
     expect(result.current.wrapper).toMatch('wrapper');
     unmount();
@@ -33,7 +33,7 @@ describe('makeClasses:', () => {
   test('3', () => {
     const useClasses = makeClasses<'wrapper'>({ wrapper: { backgroundColor: 'red' } });
     let doAppend = false;
-    const { unmount, rerender } = renderHook(() => useClasses(undefined, doAppend));
+    const { unmount, rerender } = renderHook(() => useClasses(null, doAppend));
     expect(document.styleSheets[0]?.cssRules[0].cssText).toBeUndefined();
 
     doAppend = true;
