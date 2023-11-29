@@ -43,6 +43,8 @@ jobs:
     needs: build
     if: github.event_name == 'push' && contains(github.ref, '/main')
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
