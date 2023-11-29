@@ -6,7 +6,7 @@ import makeClasses from './classes.functions';
 describe('makeClasses:', () => {
   test('1', () => {
     const useClasses = makeClasses<'wrapper'>({ wrapper: { backgroundColor: 'red' } });
-    const { result, unmount } = renderHook(() => useClasses());
+    const { result, unmount } = renderHook(() => useClasses(undefined));
     expect(Object.keys(result.current)).toContain('wrapper');
     expect(result.current.wrapper).toMatch('wrapper');
     unmount();

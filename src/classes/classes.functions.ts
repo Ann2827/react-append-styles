@@ -1,4 +1,4 @@
-import { Defer, makeSubscribe } from 'library-react-hooks/core';
+import { Defer, makeSubscribe } from 'library-react-hooks';
 
 import { appendClasses } from '../append';
 
