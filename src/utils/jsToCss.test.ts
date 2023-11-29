@@ -53,6 +53,19 @@ describe('jsToCss fn:', () => {
   //   expect(jsToCss(input)).toBe(expectedOutput);
   // });
 
+  // TODO: починить
+  // test('5', () => {
+  //   const input = {
+  //     '@media all and (max-width: 600px)': {
+  //       '.className': {
+  //         backgroundSize: 'contain',
+  //       },
+  //     },
+  //   };
+  //   const expectedOutput = '@media all and (max-width: 600px){.className{background-size:contain}}';
+  //   expect(jsToCss(input)).toBe(expectedOutput);
+  // });
+
   test('6', () => {
     const input = {
       '--kc-custom-size-headerPadding': '14px 110px',

@@ -1,5 +1,5 @@
-export { default as makeClasses } from './styles.hook';
-
 export * from './append';
+export * from './classes';
+export * from './theme';
 
-export { generateClasses } from './makeClasses';
+export { generateClasses } from './utils/generateClasses';
