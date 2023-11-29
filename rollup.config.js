@@ -22,10 +22,11 @@ export default [
       sourcemap: false,
     },
     external: ['react', 'library-react-hooks'],
+    treeshake: 'recommended',
     plugins: [
       typescript({
         tsconfig: './tsconfig.json',
-        include: ['src/**/**/*.ts'],
+        include: ['src/**/*.ts'],
         exclude: ['src/**/**/*.test.ts'],
       }),
       terser({

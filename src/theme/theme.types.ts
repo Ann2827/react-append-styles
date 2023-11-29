@@ -1,4 +1,4 @@
-import { IContext, IStore } from 'library-react-hooks/core';
+import { IContext, IStore } from 'library-react-hooks';
 
 import { TMakeClasses, TTheme } from '../classes';
 
