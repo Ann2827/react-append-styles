@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import '../../__mocks__/document';
 
-import makeTheme, { IThemeContext } from '.';
+import { IThemeContext, makeTheme } from '.';
 
 type TTheme = {
   primaryColor: string;
