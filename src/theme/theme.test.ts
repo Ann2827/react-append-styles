@@ -48,7 +48,7 @@ describe('makeTheme:', () => {
 
   test('2', () => {
     const useClasses = ThemeContext.makeClasses<'wrapper'>({ wrapper: { backgroundColor: 'red' } });
-    const { result, unmount } = renderHook(() => useClasses());
+    const { result, unmount } = renderHook(() => useClasses(undefined));
     expect(Object.keys(result.current)).toContain('wrapper');
     expect(result.current.wrapper).toMatch('wrapper');
     unmount();

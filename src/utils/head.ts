@@ -23,6 +23,6 @@ export const appendToHead = (css: string, key = ''): void => {
 };
 
 export const removeFromHead = (key: string): void => {
-  const els = document.querySelectorAll(`head style[data-meta=${metaKey}][data-name*=${key}]`);
+  const els = document.querySelectorAll(`head style[data-meta=${metaKey}][data-name*="${key}"]`);
   els.forEach((item) => item.remove());
 };
