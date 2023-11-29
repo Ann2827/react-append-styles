@@ -1,4 +1,4 @@
-const { TextEncoder } = require("util");
+const { TextEncoder, TextDecoder } = require("util");
 
 module.exports = {
   collectCoverageFrom: [
@@ -10,11 +10,22 @@ module.exports = {
     "/.github/",
     "/dist/",
   ],
-  globals: {
-    "TextEncoder": TextEncoder
+  moduleNameMapper: {
+    // "\\.(ts)$": "<rootDir>/__mocks__/document.ts",
+    "library-react-hooks": "<rootDir>/node_modules/library-react-hooks/dist/index.js",
   },
-  roots: ["<rootDir>/src/"],
+  globals: {
+    "TextEncoder": TextEncoder,
+    "TextDecoder": TextDecoder,
+  },
+  roots: [
+      "<rootDir>/src/",
+    "<rootDir>/__mocks__/"
+  ],
   transform: {
     "\\.ts$": ["babel-jest", { configFile: "./babel-jest.config.js" }]
-  }
+  },
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.js'],
+  // testEnvironment: 'jsdom'
+  // reporters: [['github-actions', {silent: false}], 'summary'],
 };

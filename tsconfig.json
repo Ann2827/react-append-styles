@@ -18,9 +18,10 @@
     "isolatedModules": true,
     "noFallthroughCasesInSwitch": true,
     "declaration": true,
-//    "jsx": "react",
+    "jsx": "react",
 //    "sourceMap": true,
-    "declarationDir": "./types"
+    "declarationDir": "./types",
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
   "include": [
     "src"

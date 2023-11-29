@@ -21,7 +21,7 @@ export default [
       format: 'es',
       sourcemap: false,
     },
-    external: ['react'],
+    external: ['react', 'library-react-hooks'],
     plugins: [
       typescript({
         tsconfig: './tsconfig.json',

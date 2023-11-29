@@ -1,12 +1,14 @@
-const metaKey = 'customStyles';
 interface IEHTMLStyleElement extends HTMLStyleElement {
   styleSheet?: {
     cssText: string;
   };
 }
-export const appendToHead = (css: string, timeout: number, key = '') => {
+
+export const metaKey = 'customStyles';
+
+export const appendToHead = (css: string, key = ''): void => {
   const head: HTMLElement = document.querySelectorAll('head')[0];
-  const el: IEHTMLStyleElement = document.createElement('style');
+  const el: IEHTMLStyleElement | HTMLStyleElement = document.createElement('style');
   if ('styleSheet' in el && el.styleSheet?.cssText) {
     // IE
     el.styleSheet.cssText = css;
@@ -17,9 +19,10 @@ export const appendToHead = (css: string, timeout: number, key = '') => {
     el.dataset.name = key;
     el.append(document.createTextNode(css));
   }
-  setTimeout(() => head.append(el), timeout);
+  head.append(el);
 };
+
 export const removeFromHead = (key: string): void => {
-  const el = document.querySelectorAll(`head style[data-meta=${metaKey}][data-name*=${key}]`)[0];
-  if (el) el.remove();
+  const els = document.querySelectorAll(`head style[data-meta=${metaKey}][data-name*=${key}]`);
+  els.forEach((item) => item.remove());
 };
