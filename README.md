@@ -1,5 +1,8 @@
 # React append styles
 
+https://docs.npmjs.com/cli/v7/using-npm/workspaces
+https://docusaurus.io/docs/installation#monorepos
+
 > React append js styles to head.
 
 ## Table of Contents
