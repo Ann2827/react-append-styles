@@ -16,7 +16,7 @@ export const appendStyles = (js: CSSRule | CSSStyles, rootSelector = ''): (() =>
 };
 
 export const appendClasses = <CLASSES extends string>(
-  js: Record<CLASSES, CSSRule>,
+  js: Record<CLASSES, CSSRule | CSSStyles>,
   rootSelector = '',
   prefix = '',
 ): [{ [K in keyof typeof js]: string | undefined }, () => void] => {

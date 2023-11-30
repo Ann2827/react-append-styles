@@ -1,4 +1,4 @@
-import { CSSRule } from '../common.types';
+import { CSSRule, CSSStyles } from '../common.types';
 
 export type TOptions = {
   rootSelector: string;
@@ -11,7 +11,7 @@ export type TClassesKeys = string;
 export type TClassesValues = string | undefined;
 export type TProps = Record<string, any> | null;
 
-export type TStyle<C extends TClassesKeys> = Record<C, CSSRule>;
+export type TStyle<C extends TClassesKeys> = Record<C, CSSRule | CSSStyles>;
 export type TStyleFn<C extends TClassesKeys, P extends TProps> = ((props: P) => TStyle<C>) | TStyle<C>;
 
 export type TClasses<C extends TClassesKeys> = Record<C, TClassesValues>;
