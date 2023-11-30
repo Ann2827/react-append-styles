@@ -1,6 +1,7 @@
-import { CSSRule, CSSStyles, jsToCss } from '../utils/jsToCss';
+import { jsToCss } from '../utils/jsToCss';
 import { generateClasses } from '../utils/generateClasses';
 import { appendToHead, removeFromHead } from '../utils/head';
+import { CSSRule, CSSStyles } from '../common.types';
 import crc32 from '../utils/hash';
 
 // TODO: вариант с проверкой перед заменой (вирутальный дом?)

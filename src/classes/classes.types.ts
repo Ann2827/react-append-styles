@@ -1,4 +1,4 @@
-import { CSSRule } from '../utils/jsToCss';
+import { CSSRule } from '../common.types';
 
 export type TOptions = {
   rootSelector: string;

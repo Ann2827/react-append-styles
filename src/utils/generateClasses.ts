@@ -1,4 +1,6 @@
-import { CSSRule, jsToCss } from './jsToCss';
+import { CSSRule } from '../common.types';
+
+import { jsToCss } from './jsToCss';
 import crc32 from './hash';
 
 const defaultClasses = <CLASSES extends string>(obj: Record<CLASSES, any>): { [K in keyof typeof obj]: undefined } =>
