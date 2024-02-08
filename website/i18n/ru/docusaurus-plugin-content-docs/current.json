@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.sidebarDoc.category.Usage": {
+    "message": "Использование",
+    "description": "The label for category Usage in sidebar sidebarDoc"
+  },
+  "sidebar.sidebarDoc.category.Advanced": {
+    "message": "Дополнительные функции",
+    "description": "The label for category Advanced in sidebar sidebarDoc"
+  },
+  "sidebar.sidebarDoc.category.Advanced.link.generated-index.description": {
+    "message": "Следующие функции можно вызывать из js или использовать их для кастомных хуков. Они могут предоставить больше возможностей, если функционала не хватает.\n\n- appendStyles (ссылка в АПИ)\n- appendClasses [ссылка в АПИ](https://test.com)\n- generateClasses (ссылка в АПИ)",
+    "description": "The generated-index page description for category Advanced in sidebar sidebarDoc"
+  }
+}

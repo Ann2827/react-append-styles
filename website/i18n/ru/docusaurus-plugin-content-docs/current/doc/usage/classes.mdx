@@ -1,0 +1,49 @@
+---
+sidebar_position: 1
+---
+
+# Классы
+
+## Статичные стили
+
+Пример:
+
+```typescript jsx
+import React from 'react';
+import { makeClasses } from 'react-append-styles';
+
+const useClasses = makeClasses<'wrapper'>({ wrapper: { backgroundColor: 'red' } });
+
+const MyComponent: React.FC = () => {
+  const { wrapper } = useClasses(null);
+
+  return (<div className={wrapper}>MyComponent</div>);
+};
+```
+
+## Динамические параметры
+
+Пример:
+
+```typescript jsx
+import React from 'react';
+import { makeClasses } from 'react-append-styles';
+
+const useClasses = makeClasses<'wrapper', { color: string }>((props) => ({
+  wrapper: { backgroundColor: props.color },
+}));
+
+const MyComponent: React.FC = () => {
+  const { wrapper } = useClasses({ color: 'green' });
+
+  return (<div className={wrapper}>MyComponent</div>);
+};
+```
+
+## Монтирование по условнию
+
+Если компонент принимает параметр "нужно" или "не нужно" добавлять дополнительные стили, то добавление стилей в head можно предотвратить.
+
+:::info
+Принцип работы второго аргумента `useClasses` см. [API](../../api/classes#useclasses)
+:::
