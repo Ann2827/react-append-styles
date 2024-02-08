@@ -106,7 +106,7 @@ jobs:
         run: yarn semantic-release
 
   deploy-doc:
-    needs: deploy, build-doc
+    needs: [deploy, build-doc]
     if: contains(github.ref, '/main')
     runs-on: ubuntu-latest
     steps:
