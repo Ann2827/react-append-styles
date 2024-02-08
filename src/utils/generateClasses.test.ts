@@ -25,10 +25,10 @@ describe('generateClasses fn:', () => {
   test('2', () => {
     const input = {
       [defaultClass]: {
-        borderRadius: 'var(--ui-ki-rad)',
+        borderRadius: 'var(--ui-rad)',
       },
     };
-    const expectedOutput = `.${defaultHash}{border-radius:var(--ui-ki-rad)}`;
+    const expectedOutput = `.${defaultHash}{border-radius:var(--ui-rad)}`;
     expect(generateClasses(input).css).toBe(expectedOutput);
   });
 

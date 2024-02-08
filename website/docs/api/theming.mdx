@@ -1,0 +1,18 @@
+---
+sidebar_position: 2
+---
+
+# Creating themes
+
+import APITable from '@site/src/components/APITable';
+
+## `ThemeContext`
+
+<APITable>
+    | Name      | Type                                     | Arguments                                                       | Description                                                                                                                                                  |
+    |---------------|-----------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | `makeClasses` | `TMakeClasses<T extends TTheme>`        | см. [makeClasses](./classes#example-with-dynamic-props) | Everything is the same as with the usual `makeClasses`, but in `props` you can access the `theme'.                                                              |
+    | `useTheme`    | `IStore<T>['useSubscribe']`             | 1 - listener ((state: TTheme) => state)                         | Allows you to subscribe to the entire active topic or only to a certain part.                                                                        |
+    | `switchTheme` | `(themeName: K extends string) => void` | 1 - themeName                                                   | Allows you to switch the active theme.                                                                                                                      |
+    | `reset`       | `() => void`                            | -                                                               | Resets the state by the time of initialization. Namely, the object with the themes will remain in memory. But the selected topic will be reset to default and the listeners will be cleared. |
+</APITable>

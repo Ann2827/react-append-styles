@@ -1,0 +1,68 @@
+---
+sidebar_position: 3
+---
+
+# Additional functions
+
+import APITable from '@site/src/components/APITable';
+
+### `appendStyles`
+
+Adds styles to the `head`. (Does not generate classes)
+It is recommended to use with selectors or `cssVars`.
+
+```typescript jsx
+import { appendStyles } from 'react-append-styles';
+
+const remove = appendStyles({ 'div[data-theme]': { backgroundColor: 'black' } });
+// If you need`s to remove styles from head
+remove();
+```
+Function arguments `appendStyles`:
+<APITable>
+    | Argument number | Type | Default | Description |
+    | --- | --- | --- | --- |
+    | 1 - cssObject | `CSSRule` or `CSSStyles` | - | Css styles object. A required argument. |
+    | 2 - rootSelector | `string` | "" | The selector of the parent element. Optional. |
+</APITable>
+
+
+### `appendClasses`
+Adds styles to the `head` and generates class names.
+
+```typescript jsx
+import { appendClasses } from 'react-append-styles';
+
+const [classes, remove] = appendClasses<'wrapper' | 'button'>({
+  wrapper: { color: 'red' }, button: { color: 'green' }
+});
+const { wrapper, button } = classes;
+// If you need`s to remove styles from head
+remove();
+```
+Function arguments `appendClasses`:
+
+| Argument number  | Type                            | Default  | Description                                                                             |
+|------------------|---------------------------------|----------|-----------------------------------------------------------------------------------------|
+| 0 - generic type | `CLASSES extends string`        | `string` | Generic type - class keys.                                                              |
+| 1 - cssObject    | `{ [key in CLASSES]: CSSRule }` | -        | Css styles object. A required argument.                                                 |
+| 2 - rootSelector | `string`                        | ""       | The selector of the parent element. Optional.                                           |
+| 3 - prefix       | `string`                        | ""       | A prefix for the classes of this object so that the names are not duplicated. Optional. |
+
+
+### `generateClasses`
+The function does not work with DOM. Based on the resulting style object, it creates inline css and generated class names.
+
+```typescript jsx
+import { generateClasses } from 'react-append-styles';
+
+const { css, classes } = generateClasses({ rootClass: { 'button[class*=button]': { borderRadius: '26px' } } });
+```
+Function arguments `appendClasses`:
+
+| Argument number  | Type                            | Default  | Description                                                                             |
+|------------------|---------------------------------|----------|-----------------------------------------------------------------------------------------|
+| 0 - generic type | `CLASSES extends string`        | `string` | Generic type - class keys.                                                              |
+| 1 - cssObject    | `{ [key in CLASSES]: CSSRule }` | -        | Css styles object. A required argument.                                                 |
+| 2 - rootSelector | `string`                        | ""       | The selector of the parent element. Optional.                                           |
+| 3 - prefix       | `string`                        | ""       | A prefix for the classes of this object so that the names are not duplicated. Optional. |
