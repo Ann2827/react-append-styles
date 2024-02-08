@@ -32,7 +32,8 @@
     "test:lint": "eslint './src/*.ts'",
     "test:unit": "jest --collectCoverage",
     "release": "semantic-release",
-    "lint": "eslint './src/**/*.ts' --fix"
+    "lint": "eslint './src/**/*.ts' --fix",
+    "predeploy": "cd website && yarn build"
   },
   "peerDependencies": {
     "react": ">=17.0.0",
