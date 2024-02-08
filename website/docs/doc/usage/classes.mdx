@@ -1,0 +1,49 @@
+---
+sidebar_position: 1
+---
+
+# Classes
+
+## Static styles
+
+Example:
+
+```typescript jsx
+import React from 'react';
+import { makeClasses } from 'react-append-styles';
+
+const useClasses = makeClasses<'wrapper'>({ wrapper: { backgroundColor: 'red' } });
+
+const MyComponent: React.FC = () => {
+  const { wrapper } = useClasses(null);
+
+  return (<div className={wrapper}>MyComponent</div>);
+};
+```
+
+## Dynamic props
+
+Example:
+
+```typescript jsx
+import React from 'react';
+import { makeClasses } from 'react-append-styles';
+
+const useClasses = makeClasses<'wrapper', { color: string }>((props) => ({
+  wrapper: { backgroundColor: props.color },
+}));
+
+const MyComponent: React.FC = () => {
+  const { wrapper } = useClasses({ color: 'green' });
+
+  return (<div className={wrapper}>MyComponent</div>);
+};
+```
+
+## Mounting by condition
+
+If the component accepts the "need" or "do not need" parameter to add additional styles, then adding styles to the head can be prevented.
+
+:::info
+See the principle of operation of the second argument `useClasses` here [API](../../api/classes#useclasses)
+:::

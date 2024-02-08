@@ -19,14 +19,7 @@ describe('makeTheme:', () => {
   let ThemeContext: IThemeContext<TTheme, keyof typeof themes>;
 
   beforeAll(() => {
-    ThemeContext = makeTheme<TTheme>('main', {
-      main: {
-        primaryColor: '#123456',
-      },
-      dark: {
-        primaryColor: '#000',
-      },
-    });
+    ThemeContext = makeTheme<TTheme>('main', themes);
   });
 
   afterAll(() => {

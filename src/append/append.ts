@@ -5,6 +5,8 @@ import crc32 from '../utils/hash';
 
 // TODO: вариант с проверкой перед заменой (вирутальный дом?)
 
+// TODO: tss-react CSSObject
+
 export const appendStyles = (js: CSSRule | CSSStyles, rootSelector = ''): (() => void) => {
   const css = jsToCss(js, rootSelector);
   // TODO: нужно ли добавить к строке например время?
