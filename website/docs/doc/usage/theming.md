@@ -34,7 +34,7 @@ export default ThemeContext;
 
 ### `makeClasses`
 
-Identical to using [обычных классов](classes), but with theme support.
+Identical to using [regular classes](classes), but with theme support.
 
 Example:
 
